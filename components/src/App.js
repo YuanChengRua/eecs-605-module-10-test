@@ -100,7 +100,7 @@ function App() {
     fetch(ML_API_ENDPOINT, {
       method: 'POST',
       headers: { "Content-Type": "application/json", "Accept": "text/plain" },
-      body: JSON.stringify({ "image": inputFileData })
+      body: JSON.stringify({ "fileName": inputFileData })
     }).then(response => response.json())
     .then(data => {
       // POST request error
