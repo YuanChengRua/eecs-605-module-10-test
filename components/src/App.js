@@ -145,6 +145,7 @@ function App() {
 
         // POST request success
         else {
+          console.log('success')
           const dropdownFileBytesData = JSON.parse(data.body)['bytesData'];
           setInputFileData(dropdownFileBytesData);
           setInputImage('data:image/png;base64,' + dropdownFileBytesData); // hacky way of setting image from bytes data - even works on .jpeg lol
