@@ -2,8 +2,8 @@ import './App.css';
 import React from 'react';
 
 // global variables to change where necessary
-const DROPDOWN_API_ENDPOINT = '<todo>'; // TODO
-const ML_API_ENDPOINT = '<todo>'; // TODO
+const DROPDOWN_API_ENDPOINT = 'https://vswcj7nae0.execute-api.us-east-1.amazonaws.com/prod/'; // TODO
+const ML_API_ENDPOINT = 'https://4p3tc2lohh.execute-api.us-east-1.amazonaws.com/prod/'; // TODO
 
 
 // atob is deprecated but this function converts base64string to text string
@@ -97,7 +97,7 @@ function App() {
     setSubmitButtonText('Loading Result...');
 
     // make POST request
-    fetch('https://4p3tc2lohh.execute-api.us-east-1.amazonaws.com/prod/', {
+    fetch(ML_API_ENDPOINT, {
       method: 'POST',
       headers: { "Content-Type": "application/json", "Accept": "text/plain" },
       body: JSON.stringify({ "image": inputFileData })
@@ -132,7 +132,7 @@ function App() {
 
     // only make POST request on file selection
     if (event.target.value) {
-      fetch('https://vswcj7nae0.execute-api.us-east-1.amazonaws.com/prod/', {
+      fetch(DROPDOWN_API_ENDPOINT, {
         method: 'POST',
         body: JSON.stringify({ "fileName": event.target.value })
       }).then(response => response.json())
