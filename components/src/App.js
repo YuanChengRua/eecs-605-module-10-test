@@ -97,7 +97,7 @@ function App() {
     setSubmitButtonText('Loading Result...');
 
     // make POST request
-    fetch(ML_API_ENDPOINT, {
+    fetch('https://4p3tc2lohh.execute-api.us-east-1.amazonaws.com/prod/', {
       method: 'POST',
       headers: { "Content-Type": "application/json", "Accept": "text/plain" },
       body: JSON.stringify({ "image": inputFileData })
@@ -132,7 +132,7 @@ function App() {
 
     // only make POST request on file selection
     if (event.target.value) {
-      fetch(DROPDOWN_API_ENDPOINT, {
+      fetch('https://vswcj7nae0.execute-api.us-east-1.amazonaws.com/prod/', {
         method: 'POST',
         body: JSON.stringify({ "fileName": event.target.value })
       }).then(response => response.json())
