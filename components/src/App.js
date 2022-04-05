@@ -2,8 +2,8 @@ import './App.css';
 import React from 'react';
 
 // global variables to change where necessary
-const DROPDOWN_API_ENDPOINT = 'https://mie7o7ybx0.execute-api.us-east-1.amazonaws.com/prod'; // TODO
-const ML_API_ENDPOINT = 'https://86mjse4wt7.execute-api.us-east-1.amazonaws.com/prod/'; // TODO
+const DROPDOWN_API_ENDPOINT = '<todo>'; // TODO
+const ML_API_ENDPOINT = '<todo>'; // TODO
 
 
 // atob is deprecated but this function converts base64string to text string
@@ -145,7 +145,6 @@ function App() {
 
         // POST request success
         else {
-          console.log(data.body)
           const dropdownFileBytesData = JSON.parse(data.body)['bytesData'];
           setInputFileData(dropdownFileBytesData);
           setInputImage('data:image/png;base64,' + dropdownFileBytesData); // hacky way of setting image from bytes data - even works on .jpeg lol
